@@ -37,4 +37,14 @@
 	(create-interval (inc a) b (append interval (cons a '()) ))))
   (if (> a b)
       (display "Lower limit is greater than upper limit")
-      (create-interval a b '())))  
+      (create-interval a b '())))
+
+
+; Returns reverse of a given list
+(define (reverse-list lst)
+  (define (rlist newlist oldlist)
+    (if (null? oldlist)
+	newlist
+	(rlist (cons (car oldlist) newlist)
+	       (cdr oldlist))))
+  (rlist '() lst))]
