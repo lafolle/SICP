@@ -18,12 +18,13 @@
 
 ; Returns nth item in list l
 (define (list-ref l n)
+  (define len (length l)
   (define (ref k lst)
     (if (= k n)
 	(car lst)
 	(ref (inc k) (cdr lst))))
-  (if (or (= (length l) n)
-	  (> n (length l))
+  (if (or (= len n)
+	  (> n len)
 	  (< n 0))
       (display "List index out of range")
       (ref 0 l)))
