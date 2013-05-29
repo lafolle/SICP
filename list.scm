@@ -48,3 +48,15 @@
 	(rlist (cons (car oldlist) newlist)
 	       (cdr oldlist))))
   (rlist '() lst))]
+
+; List min-max procedures
+(define (list-max ls)
+  (eval (cons 'max ls) user-initial-environment))
+
+(define (list-min ls)
+  (eval (cons 'min ls) user-initial-environment))
+
+
+
+
+
