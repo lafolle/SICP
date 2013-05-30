@@ -17,7 +17,7 @@
   (list-len-iter 0 l))
 
 ; Returns nth item in list l
-(define (list-ref l n)
+(define (list-ref n l)
   (define len (length l)
   (define (ref k lst)
     (if (= k n)
@@ -56,6 +56,20 @@
 (define (list-min ls)
   (eval (cons 'min ls) user-initial-environment))
 
+; Extract elements from index x to y-1
+(define (slice x y ls)
+  (define (f a newlist)
+    (if (= a y)
+	newlist
+	(f (+ a 1) (append newlist
+			   (cons (list-ref a ls) '())))))
+  (f x '()))
+
+; Update kth element of ls by m
+(define (update-list k m ls)
+  (append (append (slice 0 k ls) (cons m '()))
+	  (slice (+ k 1) (length ls) ls)))
+				      
 
 
 
