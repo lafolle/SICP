@@ -1,10 +1,11 @@
+;; unbalanced brackets ( don't use this file)
+
 
 ; Recursive process
 (define (list-len-rec lst)
   (if (null? lst)
       0
       (+ 1 (list-len-rec (cdr lst)))))
-
 
 ; Iterative process
 (define (list-len-iter len lst)
@@ -18,7 +19,7 @@
 
 ; Returns nth item in list l
 (define (list-ref n l)
-  (define len (length l)
+  (define len (length l))
   (define (ref k lst)
     (if (= k n)
 	(car lst)
@@ -47,7 +48,7 @@
 	newlist
 	(rlist (cons (car oldlist) newlist)
 	       (cdr oldlist))))
-  (rlist '() lst))]
+  (rlist '() lst)))
 
 ; List min-max procedures
 (define (list-max ls)
@@ -69,6 +70,9 @@
 (define (update-list k m ls)
   (append (append (slice 0 k ls) (cons m '()))
 	  (slice (+ k 1) (length ls) ls)))
+
+
+
 				      
 
 
