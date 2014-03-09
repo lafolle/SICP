@@ -1,4 +1,4 @@
-scheme
+mit-scheme
 ======
 
-mit-scheme, a dialect of lisp, code repo 
+Code related to the book, Structure and Interpretation of Computer Programs by Harold Abelson, Gerald Jay Sussman and Julie Sussman.
